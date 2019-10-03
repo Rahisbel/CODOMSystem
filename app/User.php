@@ -23,18 +23,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
+    public function roles(){
+        return $this->hasMany('App\Role');
+    }
+
+    /*public function roles()
     {
         return $this->belongsToMany(Role::class)->withTimestamps();
-    }
+    }*/
 
-    public function authorizeRoles($roles)
+    /*public function authorizeRoles($roles)
     {
-        abort_unless($this->hasAnyRole($roles), 401);
+        abort_unless($this->hasMany($roles), 401);
         return true;
-    }
+    }*/
 
-    public function hasAnyRole($roles)
+    /*public function hasAnyRole($roles)
     {
         if (is_array($roles)) {
             foreach ($roles as $role) {
@@ -48,7 +52,7 @@ class User extends Authenticatable
                 }   
             }
             return false;
-        }
+        } 
 
     public function hasRole($role)
     {
@@ -56,5 +60,9 @@ class User extends Authenticatable
             return true;
         }
         return false;
-    }
+    }*/
+
+
+
+
 }

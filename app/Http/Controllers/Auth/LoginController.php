@@ -21,7 +21,7 @@ class LoginController extends Controller
 
     protected function redirectTo(){ // asi redirecciona a cada vista
        
-        if (Auth::user()->administrador==1) {
+        if (Auth::user()->role_id==1) {
             return '/administrador';
         }
         

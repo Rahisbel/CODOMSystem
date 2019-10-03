@@ -9,9 +9,12 @@ class adminController extends Controller
     public function __construct(){}
 
     public function index(Request $request)
-    {
-        if ($request->user()->authorizeRoles(['admin'])) { // sólo admin
-            return view('admin.admin');
-        }
+    {    
+        return view('admin.admin');
+    }
+
+    public function error(Request $request)
+    {    
+        return view('errors.401');
     }
 }
