@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-	<h4>Listado Inmuebles</h4>
+	<h4 align="center">Listado de Inmuebles</h4>
 
 	@if($inmuebles->isEmpty())
 		<h4>No hay inmuebles</h4>
@@ -55,5 +55,7 @@
 				</tbody>
 			</table>	
 	@endif
+
+	<a href="{{url('administrador')}}" type="submit" class="btn btn-primary">{{ __('Volver') }}</a>
 </div>
 @endsection

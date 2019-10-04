@@ -51,12 +51,12 @@
 						
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-success">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Registrar Inmueble') }}
                                 </button>
-                                <button href="{{url('listadoInmuebles')}}" type="submit" class="btn btn-success">
+                                <a href="{{url('administrador')}}" type="submit" class="btn btn-primary">
                                     {{ __('Volver') }}
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </form>
