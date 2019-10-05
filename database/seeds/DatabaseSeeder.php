@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(RoleTableSeeder::class);
         $this->call(TypeTableSeeder::class);
+        $this->call(ProviderTableSeeder::class);
 
         User::create([
 

@@ -12,6 +12,8 @@ Route::get('/listadoInmuebles','PropertyController@show')->name('listadoInmueble
 Route::get('/registrarInmueble','PropertyController@create')->name('registrarInmueble');
 Route::post('/almacenarInmueble', 'PropertyController@store')->name('almacenarInmueble');
 
+Route::get('/listadoProveedores','ProviderController@show')->name('listadoProveedores');
+
 Route::get('/error','adminController@error')->name('error');
 
 Route::group(['middleware' => 'admin'], function() {

@@ -6,9 +6,9 @@
 			      <li class="nav-item">
 			        <a class="nav-link active" href="#">Administrador</a>
 			      </li>
-			      <li class="nav-item">
+			      <!--<li class="nav-item">
 			        <a class="nav-link" href="{{url('home')}}">Inicio</a>
-			      </li>
+			      </li>-->
 			      
 			</ul>
 
@@ -59,7 +59,7 @@
 				      <h5 align="center" class="card-title ">Proveedores</h5>
 				      <ul>
 						<li>
-					 	  <a href="#" class=" m-1">Listado de Proveedores</a>
+					 	  <a href="{{url('listadoProveedores')}}" class=" m-1">Listado de Proveedores</a>
 						</li>
 						<li>
 					 	  <a href="#" class=" m-1">Estado de Cuentas</a>
