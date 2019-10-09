@@ -9,14 +9,17 @@
 			      <!--<li class="nav-item">
 			        <a class="nav-link" href="{{url('home')}}">Inicio</a>
 			      </li>-->
-			      
+
+			                                  
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="{{ url('register') }}">{{ __('Registrarme') }}</a>
+                    </li>-->
 			</ul>
 
 			<br>
 			<div class="d-flex justify-content-center">
 				<h2> Reportes</h2>
-			</div>
-			<br>
+			</div><br><br>
   
 		<div class="col -md-4">
 			<div class="card-columns d-flex justify-content-between">
@@ -62,16 +65,16 @@
 					 	  <a href="{{url('listadoProveedores')}}" class=" m-1">Listado de Proveedores</a>
 						</li>
 						<li>
-					 	  <a href="#" class=" m-1">Estado de Cuentas</a>
+					 	  <a href="{{url('estadoCuentaProveedores')}}" class=" m-1">Estado de Cuentas</a>
 						</li>
 						<li>					 	  						
 					 	  <a href="#" class=" m-1">Historico de Cuentas</a>
 						</li>
 						<li>					 	  
-						<a href="#" class=" m-1">Pagos del mes</a>				
+						<a href="{{url('pagosMensuales')}}" class=" m-1">Pagos del mes</a>		
 						</li>
 						<li>					 	  
-						<a href="#" class=" m-1">Facturas pendientes por pagar</a>		
+						<a href="{{url('facturasPendientes')}}" class=" m-1">Facturas pendientes por pagar</a>		
 						</li>
 				 	  </ul>	
 				    </div>

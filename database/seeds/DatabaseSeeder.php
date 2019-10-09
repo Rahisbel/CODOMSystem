@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Property;
+use App\Condition;
+use App\Invoice;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +14,9 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleTableSeeder::class);
         $this->call(TypeTableSeeder::class);
         $this->call(ProviderTableSeeder::class);
+        $this->call(ConditionTableSeeder::class);
+
+        factory(User::class,7)->create(); // genera 7 usuarios aleatorios en la DB
 
         User::create([
 
@@ -36,6 +42,8 @@ class DatabaseSeeder extends Seeder
             'role_id'=> 2
         ]);
 
-        factory(User::class,7)->create(); // genera 7 usuarios aleatorios en la DB
+
+        factory(Property::class,7)->create();
+        factory(Invoice::class,7)->create();
     }
 }

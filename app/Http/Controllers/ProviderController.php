@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Provider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProviderController extends Controller
 {
@@ -23,6 +24,20 @@ class ProviderController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function costs(){
+
+        /*$providers = DB::select('select name,price from providers');
+        $total = 0;
+
+        foreach ($providers as $provider){
+            $total += $provider->price;
+        }
+
+        //dd($costs);
+        return view('admin.eCuentaProveedores',compact('providers','total'));*/
+
     }
 
 

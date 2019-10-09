@@ -14,4 +14,8 @@ class Property extends Model
     public function type(){
         return $this->belongsTo('App\Type');
     }
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }
