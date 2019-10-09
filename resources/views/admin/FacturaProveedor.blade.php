@@ -3,24 +3,25 @@
 @section('content')
 <div class="container">
 				<div class="d-flex justify-content-center">
-					<h1 align="center">Facturas</h1>
+					<h1 align="center">Listado de Facturas</h1>
 				</div><hr><br>
 
     @foreach ($providers as $provider)
+		@if ($provider->id <= $cantidad)		
         <table class="table">
             <thead class="thead-dark">
-            <tr>
-                <th  scope="col">Nro de Factura</th>
-                <th  scope="col">Servicio</th>
-                <th  scope="col">Monto</th>
-                <th  scope="col">Fecha de Emision</th>
-                <th  scope="col">Fecha de Vencimiento</th>
-                <th  scope="col">Condición</th>
-            </tr>
+	            <tr>
+	                <th  scope="col">Nro de Factura</th>
+	                <th  scope="col">Servicio</th>
+	                <th  scope="col">Monto</th>
+	                <th  scope="col">Fecha de Emision</th>
+	                <th  scope="col">Fecha de Vencimiento</th>
+	                <th  scope="col">Condición</th>
+	            </tr>
             </thead>
-        @foreach ($invoices as $invoice)
-            @if ($provider->id == $invoice->provider_id)
-
+		@endif
+	        @foreach ($invoices as $invoice)
+	            @if ($provider->id == $invoice->provider_id)
                     <tbody>
                         <tr>
                             <td align="center">{{$invoice->id}}</td>
@@ -31,7 +32,6 @@
                             <td>{{$invoice->condition->name}}</td>
                         </tr>
                     </tbody>
-                    <hr>
                 @endif
             @endforeach
         </table>

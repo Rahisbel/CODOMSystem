@@ -14,6 +14,7 @@ class CreatePropertiesTable extends Migration
             $table->float('alicuota');
             $table->integer('type_id')->refences('id')->on('types')->onDelete('cascade');
             $table->integer('user_id')->refences('id')->on('users')->onDelete('cascade');
+            $table->integer('condominia_id')->nullable()->refences('id')->on('condominia')->onDelete('cascade');
             $table->timestamps();
         });
     }

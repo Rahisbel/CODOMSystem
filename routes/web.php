@@ -20,6 +20,10 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('/facturaProveedor','InvoiceController@show')->name('facturasP');
 	Route::get('/facturasPendientes','InvoiceController@facturasPendientes');
 	Route::get('/pagosMensuales','InvoiceController@pagosMensuales');
+	Route::get('/registroCondominio','CondominiumController@create');
+	Route::post('/almacenarCondominio', 'CondominiumController@store')->name('almacenarCondominio');
+	Route::get('/listadoCondominios','CondominiumController@show')->name('listadoCondominios');
+
 });
 
 

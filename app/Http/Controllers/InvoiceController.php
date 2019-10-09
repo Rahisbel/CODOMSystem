@@ -15,7 +15,6 @@ class InvoiceController extends Controller
 {
 
     public function invoices(){
-
         $invoices = DB::select('select id, dueDate,condition_id,provider_id from invoices');
         $providers = DB::select('select name,price,id from providers');
         return view('admin.eCuentaProveedores',compact('invoices','providers'));
@@ -36,6 +35,7 @@ class InvoiceController extends Controller
         $dateY= $date->year;
         $date=$date->format('Y-m');
         $invoices = Invoice::all();
+        $providers = DB::select('select name,price from providers');
         $mes = 0;
         $i=0;
         foreach ($invoices as $invoice) {
@@ -50,7 +50,7 @@ class InvoiceController extends Controller
         }
         //dd($invoices);
 
-        return view('admin.pagoMensual',compact('invoices'));
+        return view('admin.pagoMensual',compact('invoices','providers'));
     }
 
 
@@ -91,10 +91,15 @@ class InvoiceController extends Controller
         $invoices = Invoice::all();
         $providers = DB::select('select name,price,id from providers');
         $total = 0;
+        $cantidad=0;
+        foreach ($invoices as $invoice) {
+            $cantidad += $invoice->id;
+        }
+
         foreach ($providers as $provider){
             $total += $provider->price;
         }
-        return view('admin.FacturaProveedor',compact('invoices','providers','total','conditions'));
+        return view('admin.FacturaProveedor',compact('invoices','providers','total','conditions','cantidad'));
     }
 
  

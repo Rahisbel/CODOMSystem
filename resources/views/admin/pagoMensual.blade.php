@@ -11,7 +11,9 @@
 					  <div class="card border-dark mb-3 mx-4">
 					    <div class="card-body">
 
-					    	@foreach ($invoices as $invoice)
+		
+					    		@foreach ($invoices as $invoice)
+					    		
 									<table class="table">
 									  <thead class="thead-dark">
 									    <tr>
@@ -23,14 +25,13 @@
 									  <tbody>
 										    <tr>
 										      	<td align="center">{{$invoice->id}}</td>
-
 										      	<td>{{$invoice->emissionDate}}</td>
 										      	<td>{{$invoice->dueDate}}</td>
 										    </tr>
 									  </tbody>
 									</table>
 									<hr>	  
-					    	@endforeach					   
+					    		@endforeach				   
 					      
 							<div class="d-flex justify-content-center">
 								<a href="#" type="button" class="btn btn-outline-primary">Pagar</a>
