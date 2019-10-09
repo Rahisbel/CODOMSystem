@@ -32,10 +32,25 @@ class InvoiceController extends Controller
     public function pagosMensuales(){
 
         $date=Carbon::now();
-        $invoices = DB::select('select id, emissionDate,condition_id,provider_id from invoices');
-        //dd($date);
-        //dd($invoices->emissionDate);
-        return view('admin.pagoMensual',compact('invoices','date'));
+        $dateM= $date->month;
+        $dateY= $date->year;
+        $date=$date->format('Y-m');
+        $invoices = Invoice::all();
+        $mes = 0;
+        $i=0;
+        foreach ($invoices as $invoice) {
+            $fecha = Carbon::parse($invoice->emissionDate);
+            $mes = $fecha->month;
+            $año = $fecha->year;
+
+            if ($mes != $dateM || $año != $dateY) {
+                unset($invoices[$i]);
+            }
+            $i+=1;
+        }
+        //dd($invoices);
+
+        return view('admin.pagoMensual',compact('invoices'));
     }
 
 

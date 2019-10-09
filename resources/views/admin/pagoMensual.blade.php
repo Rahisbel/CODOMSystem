@@ -12,13 +12,10 @@
 					    <div class="card-body">
 
 					    	@foreach ($invoices as $invoice)
-								@if ($invoice->emissionDate == $date)
 									<table class="table">
 									  <thead class="thead-dark">
 									    <tr>
 									      <th  scope="col">Nro de Factura</th>
-									      <th  scope="col">Servicio</th>
-									      <th  scope="col">Monto</th>
 									      <th  scope="col">Fecha de Emision</th>
 									      <th  scope="col">Fecha de Vencimiento</th>
 									    </tr>
@@ -26,15 +23,13 @@
 									  <tbody>
 										    <tr>
 										      	<td align="center">{{$invoice->id}}</td>
-										      	<td>{{$provider->name}}</td>
-										      	<td>{{$provider->price}}</td>
+
 										      	<td>{{$invoice->emissionDate}}</td>
 										      	<td>{{$invoice->dueDate}}</td>
 										    </tr>
 									  </tbody>
 									</table>
-									<hr>	
-								@endif										    						<h1>c</h1>   
+									<hr>	  
 					    	@endforeach					   
 					      
 							<div class="d-flex justify-content-center">
