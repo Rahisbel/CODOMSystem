@@ -5,6 +5,7 @@ use App\User;
 use App\Property;
 use App\Condition;
 use App\Invoice;
+use App\Role;
 
 class DatabaseSeeder extends Seeder
 {
