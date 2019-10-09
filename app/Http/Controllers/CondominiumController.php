@@ -33,7 +33,7 @@ class CondominiumController extends Controller
                 'quantity.required' => 'Es obligatorio este campo',               
             ]);
 
-        Property::create([
+        Condominium::create([
             'name'=> $data['name'],
             'direction'=>$data['direction'],
             'quantity'=>$data['quantity'],
@@ -58,7 +58,26 @@ class CondominiumController extends Controller
 
     public function update(Request $request, Condominium $condominium)
     {
-        //
+        //Validaciones 
+        $data = request()->validate([
+                'name'=>['required','string', 'max:255'],
+                'direction'=>['required','string', 'max:255'],
+                'quantity'=>['required','min:1'],
+
+            ],[
+                //Mensajes de error
+                'name.required'=>'Es obligatorio este campo',
+                'direction.required' => 'Es obligatorio este campo',
+                'quantity.required' => 'Es obligatorio este campo',               
+            ]);
+
+        Condominium::create([
+            'name'=> $data['name'],
+            'direction'=>$data['direction'],
+            'quantity'=>$data['quantity'],
+        ]);
+
+        return redirect()->route('listadoCondominios');    //
     }
 
 
