@@ -12,9 +12,9 @@ class EstadoCuentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('admin.estadoCuenta');
+        return view('admin.create',['id' => $id]);
     }
 
     /**
@@ -24,7 +24,7 @@ class EstadoCuentaController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +35,15 @@ class EstadoCuentaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $report = new estadoCuenta();
+        $report->id_inmueble = $request->get('id');
+        $report->dia = $request->get('dia');
+        $report->mes = $request->get('mes');
+        $report->age = $request->get('age');
+        $report->monto = $request->get('monto');
+        $report->save();
+
+        return redirect('/listadoInmuebles');
     }
 
     /**
@@ -69,7 +77,7 @@ class EstadoCuentaController extends Controller
      */
     public function update(Request $request, estadoCuenta $estadoCuenta)
     {
-        //
+        //return  view('admin.create',['id' => $estadoCuenta]);
     }
 
     /**
@@ -82,4 +90,5 @@ class EstadoCuentaController extends Controller
     {
         //
     }
+
 }

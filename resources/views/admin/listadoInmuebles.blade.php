@@ -21,6 +21,7 @@
 											<th align="center" scope="col">#</th>
 											<th align="center" scope="col">Precio</th>
 											<th align="center" scope="col">Alicuota</th>
+                                            <th align="center">Act. Abono</th>
                                             <th align="center" scope="col"></th>
 										</tr>
 										</thead>
@@ -32,7 +33,10 @@
 												    <td align="center" >{{$property->precio}}</td>
 												    <td align="center" >{{$property->alicuota}}</td>
                                                     <td align="center">
-                                                        <a href="/listadoInmuebles/{{$property->id}}/show" class="btn btn-info">Edo. Cuenta</a>
+                                                        <a href="/listadoInmuebles/{{$property->id}}" class="btn btn-primary">Abonar</a>
+                                                    </td>
+                                                    <td align="center">
+                                                        <a href="/listadoInmuebles/{{$property->id}}/estadoCuenta" class="btn btn-info">Edo. Cuenta</a>
                                                     </td>
 												@endif
 											</tr>
@@ -54,10 +58,11 @@
 									<table class="table">
 										<thead class="thead-dark">
 										<tr align="center" >
-											<th align="center"  scope="col">#</th>
-											<th align="center"  scope="col">Precio</th>
-											<th align="center"  scope="col">Alicuota</th>
-											<th align="center"  scope="col"></th>
+											<th align="center" scope="col">#</th>
+											<th align="center" scope="col">Precio</th>
+											<th align="center" scope="col">Alicuota</th>
+                                            <th align="center" scope="col">Act. Abono</th>
+											<th align="center" scope="col"></th>
 										</tr>
 										</thead>
 										<tbody>
@@ -68,7 +73,10 @@
 												    <td align="center">{{$property->precio}}</td>
 												    <td align="center">{{$property->alicuota}}</td>
                                                     <td align="center">
-                                                        <a href="/listadoInmuebles/{{$property->id}}/show" class="btn btn-info">Edo. Cuenta</a>
+                                                        <a href="/listadoInmuebles/{{$property->id}}" class="btn btn-primary">Abonar</a>
+                                                    </td>
+                                                    <td align="center">
+                                                        <a href="/listadoInmuebles/{{$property->id}}/estadoCuenta" class="btn btn-info">Edo. Cuenta</a>
                                                     </td>
 												@endif
 											</tr>

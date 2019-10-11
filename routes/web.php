@@ -13,7 +13,8 @@ Route::group(['middleware' => 'admin'], function() {
 
 	Route::get('/administrador','adminController@index')->name('administrador');
 	Route::get('/listadoInmuebles','PropertyController@show')->name('listadoInmuebles');
-	Route::get('/listadoInmuebles/estadoCuenta','EstadoCuentaController@index')->name('estadoCuenta');
+	Route::resource('/listadoInmuebles/{id}','EstadoCuentaController');
+	Route::get('/listadoInmuebles/{id}/estadoCuenta','EstadoCuentaController@index')->name('estadoCuenta');
 	Route::get('/listadoInmuebles/estadoCuenta/historicoCuenta','HistoricoCuentaController@index')->name('historicoCuenta');
 	Route::get('/registrarInmueble','PropertyController@create')->name('registrarInmueble');
 	Route::post('/almacenarInmueble', 'PropertyController@store')->name('almacenarInmueble');

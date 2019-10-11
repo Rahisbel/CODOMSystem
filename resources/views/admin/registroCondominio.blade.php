@@ -8,7 +8,7 @@
 
 		<div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card border-dark mb-3" style="max-width">
+            <div class="card border-dark mb-3" style="">
                 <div class="card-body">
 				<form method="POST" action="{{ route('almacenarCondominio') }}">
                         @csrf
