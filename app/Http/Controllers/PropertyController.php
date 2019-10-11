@@ -6,6 +6,7 @@ use App\Type;
 use App\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class PropertyController extends Controller
 {
@@ -17,8 +18,27 @@ class PropertyController extends Controller
 
     public function create()
     {
+        $properties = DB::select('selec alicuota from properties');
         $types = Type::all();
-        return view('admin.registrarInmueble',compact('types'));
+        $condominios = DB::select('select name,quantity,id from condominia');
+        $cantidad = 0;
+
+        $sumatoria = 0;
+        $band = false;
+        foreach ($properties as $property) {
+            $sumatoria+=$property->alicuota;
+        }
+
+        if($sumatoria>100){
+            $band = true;
+        }
+
+
+        foreach ($condominios as $condominio) {
+            $cantidad = $condominio->quantity;
+        }
+
+        return view('admin.registrarInmueble',compact('types','condominios','cantidad'));
     }
 
 

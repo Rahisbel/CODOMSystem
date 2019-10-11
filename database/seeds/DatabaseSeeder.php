@@ -6,6 +6,7 @@ use App\Property;
 use App\Condition;
 use App\Invoice;
 use App\Role;
+use App\Condominium;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,7 +25,8 @@ class DatabaseSeeder extends Seeder
         	'name' =>'Rahisbel',
  			'email'=>'ryhn236@gmail.com',
        	 	'password' => bcrypt('12345678'),
-            'role_id'=> 1
+            'role_id'=> 1,
+            'property_id' => -1
         ]);
 
         User::create([
@@ -32,7 +34,8 @@ class DatabaseSeeder extends Seeder
         	'name' =>'Jesus',
  			'email'=>'jesus@gmail.com',
        	 	'password' => bcrypt('12345678'),
-            'role_id'=> 1
+            'role_id'=> 1,
+            'property_id' => -2
         ]);
 
         User::create([
@@ -40,7 +43,15 @@ class DatabaseSeeder extends Seeder
         	'name' =>'Francisco',
  			'email'=>'pacho@gmail.com',
        	 	'password' => bcrypt('12345678'),
-            'role_id'=> 2
+            'role_id'=> 2,
+            'property_id' => -3
+        ]);
+
+        Condominium::create([
+
+            'name' =>'Urb Los angeles',
+            'direction'=>'Barrio obrero san cristobal',
+            'quantity'=> 7,
         ]);
 
 

@@ -6,14 +6,16 @@
 			      <li class="nav-item">
 			        <a class="nav-link active" href="#">Administrador</a>
 			      </li>
-			      <!--<li class="nav-item">
-			        <a class="nav-link" href="{{url('home')}}">Inicio</a>
-			      </li>-->
-
-
-                    <!--<li class="nav-item">
-                        <a class="nav-link" href="{{ url('register') }}">{{ __('Registrarme') }}</a>
-                    </li>-->
+			      <li class="nav-item">
+			        <a class="nav-link" href="{{url('listadoCondominios')}}">Listado de Condominios</a>
+			      </li>
+		                                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('registroCondominio') }}">{{ __('Registrar Condominio') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('registroUsuario') }}">{{ __('Registrar Usuario') }}</a>
+                    </li>
 			</ul>
 
 			<br>

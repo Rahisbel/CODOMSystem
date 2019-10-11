@@ -26,7 +26,8 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('/registroCondominio','CondominiumController@create');
 	Route::post('/almacenarCondominio', 'CondominiumController@store')->name('almacenarCondominio');
 	Route::get('/listadoCondominios','CondominiumController@show')->name('listadoCondominios');
-
+	Route::post('/almacenarUsuario', 'usuarioController@store')->name('almacenarUsuario');
+	Route::get('/registroUsuario', 'usuarioController@create')->name('registroUsuario');
 });
 
 

@@ -41,6 +41,9 @@
 			<br>
 			<div class="d-flex justify-content-center">
 				<a href="{{url('administrador')}}" type="submit" class="btn btn-primary">{{ __('Volver') }}</a>
+
+				<a href="{{url('registrarInmueble')}}" type="submit" class="btn btn-primary">
+                {{ __('Registrar Inmueble(s)') }}</a>
 			</div>
 		<br><hr>
     	<footer class="d-flex justify-content-center"> Copyright 2019. Elaborado por Jesús Chacón y Rahisbel Herrera. Estudiantes de Ingeniería en Informática - UNET </footer>
