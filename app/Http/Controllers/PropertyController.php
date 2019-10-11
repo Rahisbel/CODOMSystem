@@ -6,6 +6,7 @@ use App\Type;
 use App\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class PropertyController extends Controller
 {
@@ -18,7 +19,14 @@ class PropertyController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.registrarInmueble',compact('types'));
+        $condominios = DB::select('select name,quantity,id from condominia');
+        $cantidad = 0;
+
+        foreach ($condominios as $condominio) {
+            $cantidad = $condominio->quantity;
+        }
+
+        return view('admin.registrarInmueble',compact('types','condominios','cantidad'));
     }
 
 

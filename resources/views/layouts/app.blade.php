@@ -35,10 +35,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
-                            @if (Route::has('register'))
+                            <!--@if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
-                                </li>
+                                </li>-->
                             @endif
 
                         @else
