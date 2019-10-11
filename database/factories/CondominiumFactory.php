@@ -6,7 +6,9 @@ use App\Condominium;
 use Faker\Generator as Faker;
 
 $factory->define(Condominium::class, function (Faker $faker) {
-    return [
-        //
+	    return [
+        'name' => $faker->name,
+        'direction' => $faker->name,
+        'quantity' => $faker->numberBetween(1,15),
     ];
 });

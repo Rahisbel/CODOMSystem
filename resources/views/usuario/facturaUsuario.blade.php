@@ -5,8 +5,9 @@
 				<div class="d-flex justify-content-center">
 					<h1 align="center">Listado de Facturas</h1>
 				</div><hr><br>
+	
 
-    @foreach ($providers as $provider)			
+    @foreach ($providers as $provider)	
         <table class="table">
             <thead class="thead-dark">
 	            <tr>
@@ -14,8 +15,7 @@
 	                <th  scope="col">Servicio</th>
 	                <th  scope="col">Monto</th>
 	                <th  scope="col">Fecha de Emision</th>
-	                <th  scope="col">Fecha de Vencimiento</th>
-	                <th  scope="col">Condición</th>
+	                <th  scope="col">Fecha de Vencimiento</th>	                
 	            </tr>
             </thead>
 	        @foreach ($invoices as $invoice)
@@ -26,8 +26,7 @@
                             <td>{{$provider->name}}</td>
                             <td>{{$provider->price}}</td>
                             <td>{{$invoice->emissionDate}}</td>
-                            <td>{{$invoice->dueDate}}</td>
-                            <td>{{$invoice->condition->name}}</td>
+                            <td>{{$invoice->dueDate}}</td>                 
                         </tr>
                     </tbody>
                 @endif
@@ -35,8 +34,13 @@
         </table>
     @endforeach
 
+    <h5 align="center">Total de Servicios:{{$total}}</h5>
+    <h5 align="center">Monto de reserva:{{$fondo}}</h5>
+	<h5 align="center">Alicuota:{{$alicuota}}</h5>
+	<h5 align="center">Total a Pagar: {{$totalPago}}</h5><hr>
+
 		<div class="d-flex justify-content-center">
-			<a href="{{url('estadoCuentaProveedores')}}" type="submit" class="btn btn-primary">{{ __('Volver') }}</a>
+			<a href="{{url('usuario')}}" type="submit" class="btn btn-primary">{{ __('Volver') }}</a>
 		</div>
 
 		<br><hr>

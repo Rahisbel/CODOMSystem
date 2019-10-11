@@ -7,6 +7,7 @@ use App\Condition;
 use App\Invoice;
 use App\Role;
 use App\Condominium;
+use App\Provider;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TypeTableSeeder::class);
         $this->call(ProviderTableSeeder::class);
         $this->call(ConditionTableSeeder::class);
-
         factory(User::class,7)->create(); // genera 7 usuarios aleatorios en la DB
 
         User::create([
@@ -57,5 +57,6 @@ class DatabaseSeeder extends Seeder
 
         factory(Property::class,7)->create();
         factory(Invoice::class,7)->create();
+        factory(Condominium::class,7)->create();
     }
 }

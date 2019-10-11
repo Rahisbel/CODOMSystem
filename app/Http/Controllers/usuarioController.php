@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Property;
+use App\Provider;
+use App\Invoice;
+use App\Condominium;
 
 class usuarioController extends Controller
 {
@@ -52,8 +56,44 @@ class usuarioController extends Controller
 
     public function show(User $user)
     {
-        //$inmuebles = Property::all();
-        //return view('admin.listadoInmuebles',compact('inmuebles'));
+        $users = DB::select('select name,property_id,id from users');
+        $condominium = DB::select('select name from condominia');
+        $properties = Property::all();
+
+        foreach ($users as $user) { // Datos del propietario
+            $name = $user->name;
+            $number = $user->property_id;
+        }
+
+        $providers = Provider::all();
+
+        $total = 0;
+        foreach ($providers as $provider) { // cantidad total de servicios
+            $total+=$provider->price;
+        }
+
+        $fondo=0;
+        $alicuota = 0;
+        $i=0;
+        foreach ($properties as $property) {
+            foreach ($users as $user) {
+               if ($user->property_id == $property->id) {
+                    $fondo = ($property->precio * 10)/100;
+                    $alicuota = ($property->precio * $property->alicuota)/100;
+                    
+               }
+               else{
+                unset($properties[$i]);
+               }
+               $i+=1;
+            }
+        }
+
+        $totalPago= $total + $fondo + $alicuota;
+
+
+        $invoices = Invoice::all();
+        return view('usuario.facturaUsuario',compact('users','providers','total','invoices','condominium','fondo','alicuota','totalPago'));
     }
 
 
