@@ -2,15 +2,15 @@
 
 Route::get('/', function (){ return view('home');})->name('principal');
 
-
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/usuario','usuarioController@index')->name('usuario');
 Route::get('/facturasUsuario','usuarioController@show')->name('facturasUsuario');
+Route::get('error',function(){
+	abort(401);
+});
 
-Route::get('/error','adminController@error')->name('error');
-
-Route::group(['middleware' => 'admin'], function() {
+Route::group(['middleware' => 'admin'], function() { // sólo admin
 
 	Route::get('/administrador','adminController@index')->name('administrador');
 	Route::get('/listadoInmuebles','PropertyController@show')->name('listadoInmuebles');
