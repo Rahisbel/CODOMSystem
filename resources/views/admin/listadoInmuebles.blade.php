@@ -32,7 +32,7 @@
 												    <td align="center" >{{$property->precio}}</td>
 												    <td align="center" >{{$property->alicuota}}</td>
                                                     <td align="center">
-                                                        <a href="{{url('/listadoInmuebles/estadoCuenta')}}" class="btn btn-info">Edo. Cuenta</a>
+                                                        <a href="/listadoInmuebles/{{$property->id}}/show" class="btn btn-info">Edo. Cuenta</a>
                                                     </td>
 												@endif
 											</tr>
@@ -68,7 +68,7 @@
 												    <td align="center">{{$property->precio}}</td>
 												    <td align="center">{{$property->alicuota}}</td>
                                                     <td align="center">
-                                                        <a href="{{url('/listadoInmuebles/estadoCuenta')}}" class="btn btn-info">Edo. Cuenta</a>
+                                                        <a href="/listadoInmuebles/{{$property->id}}/show" class="btn btn-info">Edo. Cuenta</a>
                                                     </td>
 												@endif
 											</tr>
