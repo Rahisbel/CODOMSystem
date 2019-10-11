@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <div class="card border-dark mb-3" style="">
                 <div class="card-body">
-                    <h1 class="d-flex justify-content-center">Actualizar Monto Mensual del Inmueble</h1>
+                    <h1 class="d-flex justify-content-center">Abonar o Cancelar el Monto Mensual del Inmueble</h1>
                     <form method="POST" action="/listadoInmuebles/{{$id}}">
                         @csrf
                         <div class="form-group row">
@@ -14,27 +14,23 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="dia" class="col-md-4 col-form-label text-md-right">Dia</label>
+                            <label for="mes" class="col-md-6 col-form-label text-md-left">Ingrese el mes a Cancelar o Abonar</label>
+                            <label for="date" class="col-md-6 col-form-label text-md-left">Ingrese la fecha del pago</label>
+                        </div>
+                        <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="dia" type="text" class="form-control" name="dia" required autocomplete="dia" autofocus>
+                                <input id="dia" type="text" class="form-control" name="mes" required autocomplete="dia" autofocus placeholder="Mes">
+                            </div>
+                            <div class="col-md-6">
+                                <input id="dia" type="date" class="form-control" name="date" required autocomplete="fecha">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="mes" class="col-md-4 col-form-label text-md-right">Mes</label>
-                            <div class="col-md-6">
-                                <input id="mes" type="text" class="form-control" name="mes" required autocomplete="mes">
-                            </div>
+                            <label for="monto" class="col-md-4 col-form-label text-md-left">Ingrese el monto</label>
                         </div>
                         <div class="form-group row">
-                            <label for="age" class="col-md-4 col-form-label text-md-right">Age</label>
-                            <div class="col-md-6">
-                                <input id="age" type="quantity" class="form-control" name="age" required autocomplete="age">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="monto" class="col-md-4 col-form-label text-md-right">Monto</label>
-                            <div class="col-md-6">
-                                <input id="monto" type="quantity" class="form-control" name="monto" required autocomplete="monto">
+                            <div class="col-md-12">
+                                <input id="monto" type="quantity" class="form-control" name="monto" required autocomplete="monto" placeholder="Monto">
                             </div>
                         </div>
                         <div class="form-group row mb-0">

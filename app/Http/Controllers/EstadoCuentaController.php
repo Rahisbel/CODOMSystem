@@ -37,9 +37,8 @@ class EstadoCuentaController extends Controller
     {
         $report = new estadoCuenta();
         $report->id_inmueble = $request->get('id');
-        $report->dia = $request->get('dia');
-        $report->mes = $request->get('mes');
-        $report->age = $request->get('age');
+        $report->mes_cancelar = $request->get('mes');
+        $report->fecha = $request->get('date');
         $report->monto = $request->get('monto');
         $report->save();
 

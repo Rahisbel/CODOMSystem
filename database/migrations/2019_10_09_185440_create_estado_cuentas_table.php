@@ -16,9 +16,8 @@ class CreateEstadoCuentasTable extends Migration
         Schema::create('estado_cuentas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('id_inmueble');
-            $table->text('dia');
-            $table->text('mes');
-            $table->text('age');
+            $table->text('mes_cancelar');
+            $table->text('fecha');
             $table->text('monto');
             $table->timestamps();
         });
