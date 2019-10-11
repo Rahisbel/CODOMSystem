@@ -13,8 +13,6 @@ Route::group(['middleware' => 'admin'], function() {
 
 	Route::get('/administrador','adminController@index')->name('administrador');
 	Route::get('/listadoInmuebles','PropertyController@show')->name('listadoInmuebles');
-	//Route::get('/listadoInmuebles/{id}/estadoCuenta','EstadoCuentaController@index')->name('estadoCuenta');
-	//Route::get('/listadoInmuebles/estadoCuenta/historicoCuenta','HistoricoCuentaController@index')->name('historicoCuenta');
 	Route::get('/registrarInmueble','PropertyController@create')->name('registrarInmueble');
 	Route::post('/almacenarInmueble', 'PropertyController@store')->name('almacenarInmueble');
 	Route::get('/listadoProveedores','ProviderController@show')->name('listadoProveedores');
@@ -27,6 +25,7 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('/listadoCondominios','CondominiumController@show')->name('listadoCondominios');
 	Route::post('/almacenarUsuario', 'usuarioController@store')->name('almacenarUsuario');
 	Route::get('/registroUsuario', 'usuarioController@create')->name('registroUsuario');
+    Route::get('/listadoInmuebles/{id}/historico','EstadoCuentaController@historico');
     Route::get('/listadoInmuebles/{id}/show','EstadoCuentaController@show');
     Route::resource('/listadoInmuebles/{id}','EstadoCuentaController');
 });

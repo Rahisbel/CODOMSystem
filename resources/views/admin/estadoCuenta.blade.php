@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="d-flex justify-content-center">
-            <h2>Estado de Cuentas Mensual de {{$report->id}}</h2>
+            <h2>Estado de Cuentas Mensual</h2>
         </div>
         <div class="col -md-4">
             <div class="card-columns d-flex justify-content-between">
@@ -13,17 +13,17 @@
                             <table class="table">
                                 <thead class="thead-dark">
                                     <tr align="center" >
-                                        <th align="center" scope="col">Mes</th>
-                                        <th align="center" scope="col">Historico</th>
+                                        <th align="center" scope="col">Fecha de Cancelacion</th>
+                                        <th align="center" scope="col">Pago del Mes</th>
+                                        <th align="center" scope="col">Monto</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($meses as $mes)
+                                @foreach($report as $r)
                                     <tr align="center"  >
-                                        <td align="center" scope="row">{{$mes}}</td>
-                                        <td align="center">
-                                            <a href="/listadoInmuebles/enero" class="btn btn-info">Detalles</a>
-                                        </td>
+                                        <td align="center" scope="row">{{$r->fecha}}</td>
+                                        <td align="center" scope="row">{{$r->mes_cancelar}}</td>
+                                        <td align="center" scope="row">{{$r->monto}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
