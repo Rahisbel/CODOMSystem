@@ -31,12 +31,7 @@
 									  </tbody>
 									</table>
 									<hr>	  
-					    		@endforeach				   
-					      
-							<div class="d-flex justify-content-center">
-								<a href="#" type="button" class="btn btn-outline-primary">Pagar</a>
-								<a href="#" type="button" class="btn btn-outline-primary">Abonar</a>
-							</div>	
+					    		@endforeach				   				
 					    </div>
 			  		</div>
 				</div>

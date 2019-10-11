@@ -36,27 +36,6 @@
 						<li>
 					 	  <a href="{{url('listadoInmuebles')}}" class=" m-1">Listado de Inmuebles</a>
 						</li>
-                          <li>
-                              <a href="#" class=" m-1">Actulizar Monto de Inmueble</a>
-                          </li>
-						<li>
-					 	  <a href="#" class=" m-1">Estado de Cuentas</a>
-						</li>
-						<li>
-					 	  <a href="#" class=" m-1">Historico de Cuentas</a>
-						</li>
-						<li>
-						<a href="#" class=" m-1">Cobros del mes</a>
-						</li>
-						<li>
-						<a href="#" class=" m-1">Analisis de Vencimiento</a>
-						</li>
-						<li>
-						<a href="#" class=" m-1">Reporte de Cartelera</a>
-						</li>
-						<li>
-						<a href="#" class=" m-1">Reporte de cuentas</a>
-						</li>
 				 	  </ul>
 				    </div>
 		  		</div>
@@ -70,10 +49,7 @@
 					 	  <a href="{{url('listadoProveedores')}}" class=" m-1">Listado de Proveedores</a>
 						</li>
 						<li>
-					 	  <a href="{{url('estadoCuentaProveedores')}}" class=" m-1">Estado de Cuentas</a>
-						</li>
-						<li>
-					 	  <a href="#" class=" m-1">Historico de Cuentas</a>
+					 	  <a href="{{url('facturaProveedor')}}" class=" m-1">Estado de Cuentas</a>
 						</li>
 						<li>
 						<a href="{{url('pagosMensuales')}}" class=" m-1">Pagos del mes</a>

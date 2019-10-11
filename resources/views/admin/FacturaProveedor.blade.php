@@ -36,7 +36,7 @@
     @endforeach
 
 		<div class="d-flex justify-content-center">
-			<a href="{{url('estadoCuentaProveedores')}}" type="submit" class="btn btn-primary">{{ __('Volver') }}</a>
+			<a href="{{url('administrador')}}" type="submit" class="btn btn-primary">{{ __('Volver') }}</a>
 		</div>
 
 		<br><hr>
