@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\estadoCuenta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class EstadoCuentaController extends Controller
 {
@@ -53,23 +55,28 @@ class EstadoCuentaController extends Controller
      */
     public function show($id,estadoCuenta $estadoCuenta)
     {
-        $report = $estadoCuenta::find($id);
+        //$report = $estadoCuenta::find($id);
+        $report = DB::select("SELECT * FROM estado_cuentas WHERE id_inmueble = '$id'");
         $meses = array(
-            'enero' => 'Enero',
-            'febrero' => 'Febrero',
-            'marzo' => 'Marzo',
-            'abril' => 'Abril',
-            'mayo' => 'Mayo',
-            'junio' => 'Junio',
-            'julio' => 'Julio',
-            'agosto' => 'Agosto',
-            'septiembre' => 'Septiembre',
-            'obctubre' => 'Obctubre',
-            'noviembre' => 'Noviembre',
-            'diciembre' => 'Diciembre',
+            'enero' => 'enero',
+            'febrero' => 'febrero',
+            'marzo' => 'marzo',
+            'abril' => 'abril',
+            'mayo' => 'mayo',
+            'junio' => 'junio',
+            'julio' => 'julio',
+            'agosto' => 'agosto',
+            'septiembre' => 'septiembre',
+            'obctubre' => 'obctubre',
+            'noviembre' => 'noviembre',
+            'diciembre' => 'diciembre',
         );
-
-        return view('admin.estadoCuenta',compact('report','meses'));
+        //return $report;
+        return view('admin.estadoCuenta',[
+            'id' => $id,
+            'meses'=> $meses,
+            'report'=> $report
+        ]);
     }
 
     /**
@@ -80,7 +87,7 @@ class EstadoCuentaController extends Controller
      */
     public function edit(estadoCuenta $estadoCuenta)
     {
-        //
+        return 'hola';
     }
 
     /**
@@ -106,4 +113,7 @@ class EstadoCuentaController extends Controller
         //
     }
 
+    public function historico($id){
+        return $id;
+    }
 }

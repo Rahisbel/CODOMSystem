@@ -26,6 +26,7 @@ Route::group(['middleware' => 'admin'], function() { // sólo admin
 	Route::get('/listadoCondominios','CondominiumController@show')->name('listadoCondominios');
 	Route::post('/almacenarUsuario', 'usuarioController@store')->name('almacenarUsuario');
 	Route::get('/registroUsuario', 'usuarioController@create')->name('registroUsuario');
+    Route::get('/listadoInmuebles/{id}/historico','EstadoCuentaController@historico');
     Route::get('/listadoInmuebles/{id}/show','EstadoCuentaController@show');
     Route::resource('/listadoInmuebles/{id}','EstadoCuentaController');
 });
