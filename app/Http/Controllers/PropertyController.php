@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class PropertyController extends Controller
 {
-    
+
     public function index()
     {
 
@@ -18,7 +18,7 @@ class PropertyController extends Controller
 
     public function create()
     {
-        $properties = DB::select('selec alicuota from properties');
+        $properties = DB::select('select alicuota from properties');
         $types = Type::all();
         $condominios = DB::select('select name,quantity,id from condominia');
         $cantidad = 0;
@@ -44,7 +44,7 @@ class PropertyController extends Controller
 
     public function store(Request $request)
     {
-        //Validaciones 
+        //Validaciones
         $data = request()->validate([
                 'precio'=>['required', 'min:1'],
                 'alicuota'=>['required', 'min:1','max:100'],
@@ -57,7 +57,7 @@ class PropertyController extends Controller
                 'alicuota.required' => 'Es obligatorio este campo',
                 'alicuota.min' => 'El porcentaje debe ser mayor a 0',
                 'alicuota.max' => 'El porcentaje debe ser menor a 100%',
-                'type_id.required' => 'Es obligatorio este campo',               
+                'type_id.required' => 'Es obligatorio este campo',
             ]);
 
         Property::create([
@@ -85,7 +85,7 @@ class PropertyController extends Controller
 
     public function update(Request $request, Property $property)
     {
-        //Validaciones 
+        //Validaciones
         $data = request()->validate([
                 'precio'=>['required', 'min:1'],
                 'alicuota'=>['required', 'min:1','max:100'],
@@ -98,7 +98,7 @@ class PropertyController extends Controller
                 'alicuota.required' => 'Es obligatorio este campo',
                 'alicuota.min' => 'El porcentaje debe ser mayor a 0',
                 'alicuota.max' => 'El porcentaje debe ser menor a 100%',
-                'type_id.required' => 'Es obligatorio este campo',               
+                'type_id.required' => 'Es obligatorio este campo',
         ]);
 
         return redirect()->route('listadoInmuebles');

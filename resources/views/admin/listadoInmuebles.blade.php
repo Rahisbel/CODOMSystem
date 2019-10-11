@@ -36,7 +36,7 @@
                                                         <a href="/listadoInmuebles/{{$property->id}}" class="btn btn-primary">Abonar</a>
                                                     </td>
                                                     <td align="center">
-                                                        <a href="/listadoInmuebles/{{$property->id}}/estadoCuenta" class="btn btn-info">Edo. Cuenta</a>
+                                                        <a href="/listadoInmuebles/{{$property->id}}/show" class="btn btn-info">Edo. Cuenta</a>
                                                     </td>
 												@endif
 											</tr>
@@ -76,7 +76,7 @@
                                                         <a href="/listadoInmuebles/{{$property->id}}" class="btn btn-primary">Abonar</a>
                                                     </td>
                                                     <td align="center">
-                                                        <a href="/listadoInmuebles/{{$property->id}}/estadoCuenta" class="btn btn-info">Edo. Cuenta</a>
+                                                        <a href="/listadoInmuebles/{{$property->id}}/show" class="btn btn-info">Edo. Cuenta</a>
                                                     </td>
 												@endif
 											</tr>

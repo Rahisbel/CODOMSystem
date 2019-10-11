@@ -51,9 +51,25 @@ class EstadoCuentaController extends Controller
      * @param  \App\estadoCuenta  $estadoCuenta
      * @return \Illuminate\Http\Response
      */
-    public function show(estadoCuenta $estadoCuenta)
+    public function show($id,estadoCuenta $estadoCuenta)
     {
-        //
+        $report = $estadoCuenta::find($id);
+        $meses = array(
+            'enero' => 'Enero',
+            'febrero' => 'Febrero',
+            'marzo' => 'Marzo',
+            'abril' => 'Abril',
+            'mayo' => 'Mayo',
+            'junio' => 'Junio',
+            'julio' => 'Julio',
+            'agosto' => 'Agosto',
+            'septiembre' => 'Septiembre',
+            'obctubre' => 'Obctubre',
+            'noviembre' => 'Noviembre',
+            'diciembre' => 'Diciembre',
+        );
+
+        return view('admin.estadoCuenta',compact('report','meses'));
     }
 
     /**
